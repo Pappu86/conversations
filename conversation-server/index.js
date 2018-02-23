@@ -22,6 +22,7 @@ export const schema = makeExecutableSchema({
 });
 
 const app = express();
+app.use(cors('*'));
 
 const graphqlEndpoint = '/graphql';
 
@@ -35,4 +36,6 @@ app.use(
 
 app.use('/graphiql', graphiqlExpress({ endpointURL: graphqlEndpoint }));
 
-app.listen(3001);
+models.sequelize.sync({}).then(() => {
+  app.listen(3001);
+});

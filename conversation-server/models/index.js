@@ -9,8 +9,11 @@ storage:'./db_conversations.sqlite'
 });
 
 const models ={
-  Users: sequelize.import('./users'),
-  Teams: sequelize.import('./teams')
+  users: sequelize.import('./users'),
+  members: sequelize.import('./members'),
+  teams: sequelize.import('./teams'),
+  messages: sequelize.import('./messages'),
+  channels: sequelize.import('./channels')
 };
 
 Object.keys(models).forEach((modelName) => {

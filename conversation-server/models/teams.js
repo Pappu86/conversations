@@ -1,21 +1,23 @@
 export default (sequelize, DataTypes)=>{
 	const Teams=sequelize.define('teams',{		
-		username:{
+		name:{
 			type:DataTypes.STRING,
 			unique:true
-		},
-		email:{
-			type:DataTypes.STRING,
-			unique:true			
-		},
-		password:DataTypes.STRING
+		}
 	});
 };
 
 Teams.associate =(models)=>{
-	Teams.belongsToMany(models.Teams,{
+	Teams.belongsToMany(models.Users,{
 		through:'members',
-		foreignKey:'userId'
+		foreignKey:{
+			name:'teamId',
+			field:'team_id'
+		}
+	});
+
+	Teams.belongsTo(models.Users,{
+		foreignKey:'owner'
 	});
 
 	return Teams;
