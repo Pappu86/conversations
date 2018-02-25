@@ -1,34 +1,55 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
+import { ApolloClient } from 'apollo-client';
+import { createHttpLink } from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { ApolloProvider } from 'react-apollo';
+import { setContext } from 'apollo-link-context';
+import { ApolloLink } from 'apollo-link';
 
-class FormExample extends React.Component {
-    render() {
-    return (
-      <div className="container">
-        <div className="login-container">
-          <div className="login-header">Login</div>
-          <div className="login-body">
-            <form>
-              <div className="form-group">                
-                <input type="email" className="form-control" placeholder="Enter email" />
-              </div>
-              <div className="form-group">
-                <input type="password" className="form-control" placeholder="Password" />
-              </div> 
-              <div className="text-center">
-                <button type="submit" className="btn btn-success width-100P">Login</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    );
+import Routes from './routes';
+import registerServiceWorker from './registerServiceWorker';
+
+const httpLink = createHttpLink({ uri: 'http://localhost:3001/graphql' });
+
+const middlewareLink = setContext(() => ({
+  headers: {
+    'x-token': localStorage.getItem('token'),
+    'x-refresh-token': localStorage.getItem('refreshToken'),
+  },
+}));
+
+const afterwareLink = new ApolloLink((operation, forward) => {
+  const { headers } = operation.getContext();
+
+  if (headers) {
+    const token = headers.get('x-token');
+    const refreshToken = headers.get('x-refresh-token');
+
+    if (token) {
+      localStorage.setItem('token', token);
+    }
+
+    if (refreshToken) {
+      localStorage.setItem('refreshToken', refreshToken);
+    }
   }
-}
 
-ReactDOM.render(
-  <FormExample />,
-  document.getElementById('root')
+  return forward(operation);
+});
+
+const link = afterwareLink.concat(middlewareLink.concat(httpLink));
+
+const client = new ApolloClient({
+  link,
+  cache: new InMemoryCache(),
+});
+
+const App = (
+  <ApolloProvider client={client}>
+    <Routes />
+  </ApolloProvider>
 );
+
+ReactDOM.render(App, document.getElementById('root'));
+registerServiceWorker();

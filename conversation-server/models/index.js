@@ -11,9 +11,9 @@ const sequelize = new Sequelize('conversations', null, null, {
 
 const models = {
   User: sequelize.import('./user'),
-  Channel: sequelize.import('./channel'),
-  Member: sequelize.import('./member'),
-  Message: sequelize.import('./message'),
+  //Channel: sequelize.import('./channel'),
+  //Member: sequelize.import('./member'),
+  //Message: sequelize.import('./message'),
   Team: sequelize.import('./team')
 };
 
