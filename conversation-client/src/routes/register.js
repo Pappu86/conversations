@@ -1,6 +1,8 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../scss/register.css';
 
 class Register extends React.Component {
   state = {
@@ -61,30 +63,24 @@ class Register extends React.Component {
     }
 
     return (
-      <div>
-        <h2>Register</h2>
-        
-
-          <input
-            name="username"
-            onChange={this.onChange}
-            value={username}
-            placeholder="Username" />
-
-          <input
-            name="email"
-            onChange={this.onChange}
-            value={email}
-            placeholder="Email" />
-          <input
-            name="password"
-            onChange={this.onChange}
-            value={password}
-            type="password"
-            placeholder="Password" />
-          <button onClick={this.onSubmit}>Submit</button>
-        
-        
+      <div className="container">
+        <div className="register-container">
+          <div className="register-header">Register</div>         
+            <div className="register-body">              
+                <div className="form-group">  
+                  <input className="form-control" name="username" onChange={this.onChange} value={username} placeholder="Username" />
+                </div>
+                <div className="form-group">
+                  <input className="form-control" name="email" onChange={this.onChange} value={email} placeholder="Email" />
+                </div>
+                <div className="form-group">
+                  <input className="form-control" name="password" onChange={this.onChange} value={password} type="password" placeholder="Password" />
+                </div>
+                <div className="text-center">
+                  <button className="btn btn-success width-100P" onClick={this.onSubmit}>Submit</button>
+                </div>
+            </div>
+          </div>
       </div>
     );
   };
