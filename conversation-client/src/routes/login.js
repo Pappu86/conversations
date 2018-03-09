@@ -66,8 +66,7 @@ console.log("errorList: ", errorList);
       <div className="container">
         <div className="login-container">
           <div className="login-header">Login</div>
-          <div className="login-body">
-            <form>
+          <div className="login-body">            
               <div className="form-group">                
                 <input type="email" className="form-control" name="email" onChange={this.onChange} value={email} placeholder="Enter email" />
               </div>
@@ -75,9 +74,8 @@ console.log("errorList: ", errorList);
                 <input type="password" className="form-control" onChange={this.onChange} value={password} placeholder="Password" />
               </div> 
               <div className="text-center">
-                <button type="submit" className="btn btn-success width-100P" onClick={this.onSubmit}>Login</button>
-              </div>
-            </form>
+                <button className="btn btn-success width-100P" onClick={this.onSubmit}>Login</button>
+              </div>            
           </div>
         </div>
       </div>
