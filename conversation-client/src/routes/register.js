@@ -1,8 +1,7 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../scss/register.css';
+import '../components-style/register.css';
 
 class Register extends React.Component {
   state = {

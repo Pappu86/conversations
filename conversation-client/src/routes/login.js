@@ -4,7 +4,8 @@ import { observer } from 'mobx-react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
+import '../components-style/index.css';
+import '../components-style/login.css';
 
 
 class Login extends React.Component {
