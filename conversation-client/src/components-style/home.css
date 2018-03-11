@@ -7,10 +7,34 @@
     left: 0;
     top: 0;
 }
+
+.media{
+	padding: 15px;
+	color: #e0dbdb;
+	cursor: pointer;
+}
+
+.profile-header{
+	cursor: pointer;
+}
+
+.profile-header:hover{
+	background-color: #189202;
+	color: #fff;
+}
+
+.left-panel .media:hover{
+	color: #fff;
+}
+
+.channels-list, .users-list{
+	min-height: 100px;
+}
+
+
+
 .main-container{
 	margin-left: 250px;
 }
 
-.media{
-	padding: 15px;
-}
+

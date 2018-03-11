@@ -7,15 +7,31 @@ import '../components-style/home.css';
 
 //const Home = ({ data: { allUsers = [] } }) => allUsers.map(u => <h1 key={u.id}>{u.email}</h1>);
 
-class Home extends React.Component {
+const users=({ data: { allUsers = [] } }) => allUsers.map(u => <h1 key={u.id}>{u.email}</h1>);
+console.log("users",users);
 
+class Home extends React.Component {
 
 	render() {
 	    return (
 	    	<div className="container-fluid">
 	    		<div className="left-panel">
-	    			<div className="media">
+	    			<div className="media profile-header">
 	    				<div className="media-body">Md.Pappu Miahn</div>
+	    			</div>
+	    			<div className="media">
+	    				<div className="media-body">Channels</div>
+	    				<div className="align-self-start mr-3">+</div>
+	    			</div>
+	    			<div className="channels-list"></div>
+					<div className="media">
+	    				<div className="media-body">Direct Messages</div>
+	    				<div className="align-self-start mr-3">+</div>
+	    			</div>
+	    			<div className="users-list"></div>
+	    			<div className="media">
+	    				<div className="align-self-start mr-2">+</div>
+	    				<div className="media-body">Invite People</div>	    				
 	    			</div>
 	    		</div>
 	    		<div className="main-container">Main container</div>
@@ -28,8 +44,7 @@ const allUsersQuery = gql`
   {
     allUsers {
       id
-      email
-      name
+      email      
     }
   }
 `;
