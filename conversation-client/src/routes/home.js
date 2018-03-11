@@ -5,10 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components-style/index.css';
 import '../components-style/home.css';
 
-//const Home = ({ data: { allUsers = [] } }) => allUsers.map(u => <h1 key={u.id}>{u.email}</h1>);
+const user = ({ data: { allUsers = [] } }) => allUsers.map(u => <h1 key={u.id}>{u.email}</h1>);
 
-const users=({ data: { allUsers = [] } }) => allUsers.map(u => <h1 key={u.id}>{u.email}</h1>);
-console.log("users",users);
+console.log("users",user.email);
 
 class Home extends React.Component {
 
