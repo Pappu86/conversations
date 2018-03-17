@@ -5,19 +5,30 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components-style/index.css';
 import '../components-style/home.css';
 
-const user = ({ data: { allUsers = [] } }) => allUsers.map(u => <h1 key={u.id}>{u.email}</h1>);
+const allUsersQuery = gql`
+  {
+    allUsers {
+      id
+      email      
+    }
+  }
+`;
 
-console.log("users",user.email);
+//const user = ({ data: { allUsers = [] } }) => allUsers.map(u => <h1 key={u.id}>{u.email}</h1>);
+
+//console.log("Users",allUsers);
 
 class Home extends React.Component {
 
 	render() {
+		const user = ({ data: { allUsers = [] } }) => allUsers.map(u => <h1 key={u.id}>{u.email}</h1>);
+
 		const users = [{name:"pappu"},{name:"zahid"},{name:"zakaria"}];
 		const listItems = users.map((user) =>
 		  <li>{user.name}</li>
 		);
 
-	    return (
+	    return (	    	
 	    	<div className="container-fluid">
 	    		<div className="left-panel">
 	    			<div className="media profile-header">
@@ -39,21 +50,14 @@ class Home extends React.Component {
 	    				<div className="align-self-start mr-2">+</div>
 	    				<div className="media-body">Invite People</div>	    				
 	    			</div>
+
+	    			{user}
 	    		</div>
 	    		<div className="main-container">Main container</div>
-	    	</div>
+	    	</div>	    	
 	    );
 	  }
 }
-
-const allUsersQuery = gql`
-  {
-    allUsers {
-      id
-      email      
-    }
-  }
-`;
 
 //export default graphql(allUsersQuery)(Home);
 

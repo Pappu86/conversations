@@ -1,6 +1,6 @@
 .left-panel{
 	background-color: #28a745;
-	color: #fff;
+	color: #e0dbdb;
 	position: absolute;
     height: 100%;
     width: 250px;
@@ -9,8 +9,7 @@
 }
 
 .media{
-	padding: 15px;
-	color: #e0dbdb;
+	padding: 15px;	
 	cursor: pointer;
 }
 
