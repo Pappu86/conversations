@@ -47,43 +47,6 @@ console.log("users",users);
 	    );
 };
 
-// class Home extends React.Component {
-
-// 	render() {		
-// 		const users = [{name:"pappu"},{name:"zahid"},{name:"zakaria"}];
-// 		const listItems = users.map((user) =>
-// 		  <li>{user.name}</li>
-// 		);
-
-// 	    return (	    	
-// 	    	<div className="container-fluid">
-// 	    		<div className="left-panel">
-// 	    			<div className="media profile-header">
-// 	    				<div className="media-body">Md.Pappu Miahn</div>
-// 	    			</div>
-// 	    			<div className="media">
-// 	    				<div className="media-body">Channels</div>
-// 	    				<div className="align-self-start mr-3">+</div>
-// 	    			</div>
-// 	    			<div className="channels-list"></div>
-// 					<div className="media">
-// 	    				<div className="media-body">Direct Messages</div>
-// 	    				<div className="align-self-start mr-3">+</div>
-// 	    			</div>
-// 	    			<div className="users-list">
-// 	    			<ul>{listItems}</ul>
-// 	    			</div>
-// 	    			<div className="media">
-// 	    				<div className="align-self-start mr-2">+</div>
-// 	    				<div className="media-body">Invite People</div>	    				
-// 	    			</div>
-// 	    		</div>
-// 	    		<div className="main-container">Main container</div>
-// 	    	</div>	    	
-// 	    );
-// 	  }
-// }
-
 const allUsersQuery = gql`
   {
     allUsers {

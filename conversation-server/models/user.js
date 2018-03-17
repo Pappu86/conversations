@@ -5,8 +5,7 @@ export default (sequelize, DataTypes) => {
     'user',
     {
       username: {
-        type: DataTypes.STRING,
-        unique: true,
+        type: DataTypes.STRING,        
         validate: {
           isAlphanumeric: {
             args: true,
