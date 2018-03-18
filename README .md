@@ -1,6 +1,6 @@
 ## Project Run Instruction
 
-1. Go to the terminal for start server side
+1. Go to the terminal for start server side <br/>
     # nmp install
     # npm start
 
