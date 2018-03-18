@@ -30,10 +30,39 @@
 	min-height: 100px;
 }
 
+ul.users{
+	padding: 0;
+	margin: 0;
+}
 
+ul.users li{
+	list-style: none;
+	padding: 5px 15px;
+	cursor: pointer;
+}
+
+ul.users li:hover{
+background-color: #189202;
+	color: #fff;
+}
 
 .main-container{
 	margin-left: 250px;
+}
+
+.messages-header{
+	padding: 15px;
+	border-bottom: 1px solid #eee;
+}
+
+.messages-header-left{
+	float: left;
+    color: #717274;
+}
+
+.messages-header-right{
+	float: right;
+	width: 350px;
 }
 
 

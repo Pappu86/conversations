@@ -35,14 +35,26 @@ console.log("users",users);
 	    				<div className="align-self-start mr-3">+</div>
 	    			</div>
 	    			<div className="users-list">
-	    			<ul>{listItems}</ul>
+	    			<ul className="users">{listItems}</ul>
 	    			</div>
 	    			<div className="media">
 	    				<div className="align-self-start mr-2">+</div>
 	    				<div className="media-body">Invite People</div>	    				
 	    			</div>
 	    		</div>
-	    		<div className="main-container">Main container</div>
+	    		<div className="main-container">
+	    			<div className="row">
+	    				<div className="col-md-12 messages-header">
+	    					<div className="messages-header-left">
+	    						<div className="channel-title">
+	    							<h5 className="">Pappu</h5>
+	    						</div>
+	    						<div className="channel-info"></div>
+	    					</div>
+	    					<div className="messages-header-right">Right</div>
+	    				</div>
+	    			</div>
+	    		</div>
 	    	</div>	    	
 	    );
 };
