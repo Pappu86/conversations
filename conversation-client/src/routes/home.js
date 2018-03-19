@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
+import FA from 'react-fontawesome';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components-style/index.css';
 import '../components-style/home.css';
@@ -47,7 +48,8 @@ console.log("users",users);
 	    				<div className="col-md-12 messages-header">
 	    					<div className="messages-header-left">
 	    						<div className="channel-title">
-	    							<h5 className="">Pappu</h5>
+	    							<h5>Pappu</h5>
+	    							<small><FA name="rocket" /></small>
 	    						</div>
 	    						<div className="channel-info"></div>
 	    					</div>
