@@ -1,8 +1,6 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
-import FA from 'react-fontawesome';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components-style/index.css';
 import '../components-style/home.css';
 
@@ -16,8 +14,8 @@ const Home = ({ data: { allUsers = [] } }) => {
 
 console.log("users",users);
 
-	const listItems = users.map((user) =>
-		  <li>{user.username}</li>
+	const listItems = users.map((user, index) =>
+		  <li key={index} userid={user.id}>{user.username}</li>
 		);
 
 	return (	    	
@@ -49,7 +47,7 @@ console.log("users",users);
 	    					<div className="messages-header-left">
 	    						<div className="channel-title">
 	    							<h5>Pappu</h5>
-	    							<small><FA name="rocket" /></small>
+	    							<small><i className="fa fa-plus"></i></small>
 	    						</div>
 	    						<div className="channel-info"></div>
 	    					</div>

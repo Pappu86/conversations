@@ -8,6 +8,9 @@ import { setContext } from 'apollo-link-context';
 import { ApolloLink } from 'apollo-link';
 
 import Routes from './routes';
+import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import registerServiceWorker from './registerServiceWorker';
 
 const httpLink = createHttpLink({ uri: 'http://localhost:3001/graphql' });

@@ -9,6 +9,7 @@
     "apollo-link-context": "^1.0.7",
     "apollo-link-http": "^1.5.1",
     "bootstrap": "^4.0.0",
+    "font-awesome": "^4.7.0",
     "graphql": "^0.13.1",
     "graphql-tag": "^2.8.0",
     "jwt-decode": "^2.2.0",
