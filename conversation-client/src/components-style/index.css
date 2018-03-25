@@ -3,7 +3,7 @@ body{
 }
 
 input::placeholder {
-  color: red;
+  color: #888;
 }
 
 

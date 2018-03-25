@@ -47,13 +47,29 @@ console.log("users",users);
 	    					<div className="messages-header-left">
 	    						<div className="channel-title">
 	    							<h5>Pappu</h5>
-	    							<small><i className="fa fa-plus"></i></small>
+	    							<small>
+	    								<span className="title-items"><i className="fa fa-star-o"></i></span>|
+										<span className="title-items">Status</span>|
+										<span className="title-items">Md.Pappu1</span>
+	    							</small>
 	    						</div>
-	    						<div className="channel-info"></div>
 	    					</div>
-	    					<div className="messages-header-right">Right</div>
+	    					<div className="messages-header-right">
+	    						<div className="search-container">
+	    							<input className="form-control" type="text" name="search" placeholder="Search" />
+	    						</div>
+	    					</div>
 	    				</div>
 	    			</div>
+	    			<div className="row messages-body">
+						<div className="col-md-12">dfgdfsgdfg</div>
+	    			</div>
+	    			<div className="row chat-container">
+						<div className="clearfix col-md-12">
+							<div className="chat-box-container" contenteditable="true"></div>
+						</div>
+	    			</div>
+
 	    		</div>
 	    	</div>	    	
 	    );
