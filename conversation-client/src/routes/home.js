@@ -36,7 +36,7 @@ console.log("users",users);
 	    			<div className="users-list">
 	    			<ul className="users">{listItems}</ul>
 	    			</div>
-	    			<div className="media">
+	    			<div className="media d-none">
 	    				<div className="align-self-start mr-2">+</div>
 	    				<div className="media-body">Invite People</div>	    				
 	    			</div>
@@ -66,7 +66,7 @@ console.log("users",users);
 	    			</div>
 	    			<div className="row chat-container">
 						<div className="clearfix col-md-12">
-							<div className="chat-box-container" contenteditable="true"></div>
+							<div className="chat-box-container" contentEditable="true"></div>
 						</div>
 	    			</div>
 

@@ -89,8 +89,9 @@ margin-bottom: 0;
 }
 
 .chat-container{
-	position: relative;
-	bottom: 0;
+	position: absolute;
+    bottom: 15px;
+    width: 82%;
 }
 
 .chat-box-container{

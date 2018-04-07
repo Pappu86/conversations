@@ -32,7 +32,7 @@ class Login extends React.Component {
     if (ok) {
       localStorage.setItem('token', token);
       localStorage.setItem('refreshToken', refreshToken);
-      this.props.history.push('/');
+      this.props.history.push('/messages/:userId');
     } else {
       const err = {};
       errors.forEach(({ path, message }) => {
@@ -72,7 +72,7 @@ console.log("errorList: ", errorList);
                 <input type="email" className="form-control" name="email" onChange={this.onChange} value={email} placeholder="Enter email" />
               </div>
               <div className="form-group">
-                <input type="password" className="form-control" onChange={this.onChange} value={password} placeholder="Password" />
+                <input type="password" className="form-control" id="password" placeholder="Enter password" name="password" onChange={this.onChange} value={password} />
               </div> 
               <div className="text-center">
                 <button className="btn btn-success width-100P" onClick={this.onSubmit}>Login</button>
