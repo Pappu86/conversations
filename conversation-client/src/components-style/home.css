@@ -41,9 +41,19 @@ ul.users li{
 	cursor: pointer;
 }
 
+ul.users li a{
+	display: block;
+	color: #e0dbdb;
+	text-decoration: none;
+}
+
 ul.users li:hover{
 background-color: #189202;
 	color: #fff;
+}
+
+.init-message-container{
+	margin: 25% 45%;
 }
 
 .main-container{

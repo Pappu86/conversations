@@ -28,7 +28,7 @@ class Register extends React.Component {
     const { ok, errors } = response.data.register;
 
     if (ok) {
-      this.props.history.push('/login');
+      this.props.history.push('/');
     } else {
       const err = {};
       errors.forEach(({ path, message }) => {
@@ -67,7 +67,7 @@ class Register extends React.Component {
           <div className="register-header">Register</div>         
             <div className="register-body">              
                 <div className="form-group">  
-                  <input className="form-control" name="username" onChange={this.onChange} value={username} placeholder="Name" />
+                  <input className="form-control" name="username" onChange={this.onChange} value={username} placeholder="Username" />
                 </div>
                 <div className="form-group">
                   <input className="form-control" name="email" onChange={this.onChange} value={email} placeholder="Email" />

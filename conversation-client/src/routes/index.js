@@ -6,6 +6,7 @@ import Home from './home';
 import Register from './register';
 import Login from './login';
 import Messages from './messages';
+import CreateTeam from './create-team';
 
 const isAuthenticated = () => {
   const token = localStorage.getItem('token');
@@ -38,11 +39,12 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 
 export default () => (
   <BrowserRouter>
-    <Switch>
-      <PrivateRoute path="/" exact component={Home} />
-      <PrivateRoute path="/messages/:userId" exact component={Messages} />      
+    <Switch>           
       <Route path="/register" exact component={Register} />
-      <Route path="/login" exact component={Login} />      
+      <Route path="/login" exact component={Login} />
+      <PrivateRoute path="/" exact component={Home} />
+      <PrivateRoute path="/messages/:userId" exact component={Messages} /> 
+      <Route path="/create-team" exact component={CreateTeam} />    
     </Switch>
   </BrowserRouter>
 );
