@@ -2,8 +2,11 @@ import React from 'react';
 import { graphql } from 'react-apollo';
 import { Link } from 'react-router-dom';
 import gql from 'graphql-tag';
+
 import '../components-style/index.css';
 import '../components-style/home.css';
+
+import UserInfo from '../components/user-info';
 
 
 const Messages = ({ data: { allUsers = [], ...options } }) => {
@@ -49,27 +52,9 @@ console.log("receiverUserId", receiverId);
 	    			</div>
 	    		</div>
 	    		<div className="main-container">
-	    			<div className="row">
-	    				<div className="col-md-12 messages-header">
-	    					<div className="messages-header-left">
-	    						<div className="channel-title">
-	    							<h5>Pappu</h5>
-	    							<small>
-	    								<span className="title-items"><i className="fa fa-star-o"></i></span>|
-										<span className="title-items">Status</span>|
-										<span className="title-items">Md.Pappu1</span>
-	    							</small>
-	    						</div>
-	    					</div>
-	    					<div className="messages-header-right">
-	    						<div className="search-container">
-	    							<input className="form-control" type="text" name="search" placeholder="Search" />
-	    						</div>
-	    					</div>
-	    				</div>
-	    			</div>
+	    			<UserInfo receiverUserId={receiverId} />
 	    			<div className="row messages-body">
-						<div className="col-md-12">dfgdfsgdfg</div>
+						<div className="col-md-12"></div>
 	    			</div>
 	    			<div className="row chat-container">
 						<div className="clearfix col-md-12">
