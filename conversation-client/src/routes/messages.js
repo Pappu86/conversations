@@ -1,18 +1,27 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
+import { Link } from 'react-router-dom';
 import gql from 'graphql-tag';
 import '../components-style/index.css';
 import '../components-style/home.css';
 
 
-const Messages = ({ data: { allUsers = [] } }) => {
-	const users = [...allUsers];
+const Messages = ({ data: { allUsers = [], ...options } }) => {
+	const authToken = localStorage.getItem('token'),	
+	 		users = [...allUsers],
+	 		params=options.variables.params;
 
+	let receiverId='';
+
+	if(params && params.userId) receiverId=params.userId;
+
+console.log("authToken",authToken);
 console.log("users",users);
+console.log("receiverUserId", receiverId);
 
 	const listItems = users.map((user, index) =>
 		  <li key={index} userid={user.id}>
-		  	<a href={`/messages/${user.id}`}>{user.username}</a>
+		  	<Link to={`/messages/${user.id}`}>{user.username}</Link>
 		  </li>
 		);
 
@@ -83,4 +92,6 @@ const allUsersQuery = gql`
   }
 `;
 
-export default graphql(allUsersQuery)(Messages);
+export default graphql(allUsersQuery,{
+  options: ownProps => ({ variables: { params: ownProps.match.params } }),
+})(Messages);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
+import { Link } from 'react-router-dom';
 import gql from 'graphql-tag';
 import '../components-style/index.css';
 import '../components-style/home.css';
@@ -16,7 +17,7 @@ console.log("users",users);
 
 	const listItems = users.map((user, index) =>
 		  <li key={index} userid={user.id}>
-		  	<a href={`/messages/${user.id}`}>{user.username}</a>
+		  	<Link to={`/messages/${user.id}`}>{user.username}</Link>
 		  </li>
 		);
 
