@@ -18,9 +18,9 @@ const Messages = ({ data: { allUsers = [], ...options } }) => {
 
 	if(params && params.userId) receiverId=params.userId;
 
-console.log("authToken",authToken);
-console.log("users",users);
-console.log("receiverUserId", receiverId);
+//console.log("authToken",authToken);
+//console.log("users",users);
+//console.log("receiverUserId", receiverId);
 
 	const listItems = users.map((user, index) =>
 		  <li key={index} userid={user.id}>

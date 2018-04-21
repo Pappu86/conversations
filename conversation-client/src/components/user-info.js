@@ -33,8 +33,8 @@ console.log("userInfo",userInfo, "receiverUserId",receiverUserId);
 };
 
 const userQuery = gql`
-  {
-  	getUser(id:1){
+   query ($id: Int!){
+  	getUser(id:$id){
     	id
     	email
     	username
@@ -42,4 +42,6 @@ const userQuery = gql`
   }
 `;
 
-export default graphql(userQuery)(UserInfo);
+export default graphql(userQuery, {
+  options: ownProps => ({ variables: { id: ownProps.receiverUserId } }),
+})(UserInfo);
