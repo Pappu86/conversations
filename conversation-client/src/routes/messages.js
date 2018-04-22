@@ -7,6 +7,7 @@ import '../components-style/index.css';
 import '../components-style/home.css';
 
 import UserInfo from '../components/user-info';
+import MessageBox from '../components/message-box';
 
 
 const Messages = ({ data: { allUsers = [], ...options } }) => {
@@ -18,15 +19,13 @@ const Messages = ({ data: { allUsers = [], ...options } }) => {
 
 	if(params && params.userId) receiverId=params.userId;
 
-//console.log("authToken",authToken);
-//console.log("users",users);
-//console.log("receiverUserId", receiverId);
-
 	const listItems = users.map((user, index) =>
 		  <li key={index} userid={user.id}>
 		  	<Link to={`/messages/${user.id}`}>{user.username}</Link>
 		  </li>
 		);
+
+	console.log("authToken",authToken);
 
 	return (	    	
 	    	<div className="container-fluid">
@@ -50,18 +49,18 @@ const Messages = ({ data: { allUsers = [], ...options } }) => {
 	    				<div className="align-self-start mr-2">+</div>
 	    				<div className="media-body">Invite People</div>	    				
 	    			</div>
+	    			{authToken?(
+						<div className="media">	    				
+	    					<div className="media-body">LOG OUT</div>	    				
+	    				</div>
+	    				):(<div></div>)}
 	    		</div>
 	    		<div className="main-container">
 	    			<UserInfo receiverUserId={receiverId} />
 	    			<div className="row messages-body">
 						<div className="col-md-12"></div>
 	    			</div>
-	    			<div className="row chat-container">
-						<div className="clearfix col-md-12">
-							<div className="chat-box-container" contentEditable="true"></div>
-						</div>
-	    			</div>
-
+	    			<MessageBox receiverUserId={receiverId} />
 	    		</div>
 	    	</div>	    	
 	    );

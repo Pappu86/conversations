@@ -18,7 +18,7 @@ console.log("userInfo",userInfo, "receiverUserId",receiverUserId);
 									<i className="fa fa-star-o"></i>
 								</span>|
 								<span className="title-items">Status</span>|
-								<span className="title-items">Md.Pappu1</span>
+								<span className="title-items">{userInfo.email}</span>
 							</small>
 						</div>
 					</div>
