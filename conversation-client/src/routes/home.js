@@ -5,15 +5,10 @@ import gql from 'graphql-tag';
 import '../components-style/index.css';
 import '../components-style/home.css';
 
-
-//const Home = ({ data: { allUsers = [] } }) => allUsers.map(u => <h1 key={u.id}>{u.email}</h1>);
-
-//console.log("Users",allUsers);
+import Logout from '../components/logout';
 
 const Home = ({ data: { allUsers = [] } }) => {
 	const users = [...allUsers];
-
-console.log("users",users);
 
 	const listItems = users.map((user, index) =>
 		  <li key={index} userid={user.id}>
@@ -38,11 +33,12 @@ console.log("users",users);
 	    			</div>
 	    			<div className="users-list">
 	    			<ul className="users">{listItems}</ul>
-	    			</div>
+	    			</div>	    			
 	    			<div className="media d-none">
 	    				<div className="align-self-start mr-2">+</div>
 	    				<div className="media-body">Invite People</div>	    				
 	    			</div>
+	    			<Logout />
 	    		</div>
 	    		<div className="main-container">
 	    			<div className="row">

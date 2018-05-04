@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 const UserInfo = ({ data: { getUser = {} }, receiverUserId }) => {
 	const 	userInfo = {...getUser};
 
-console.log("userInfo",userInfo, "receiverUserId",receiverUserId);
+//console.log("userInfo",userInfo, "receiverUserId",receiverUserId);
 
 	return (	    	
 	    		<div className="row">

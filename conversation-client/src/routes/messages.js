@@ -8,9 +8,10 @@ import '../components-style/home.css';
 
 import UserInfo from '../components/user-info';
 import MessageBox from '../components/message-box';
+import Logout from '../components/logout';
 
 
-const Messages = ({ data: { allUsers = [], ...options } }) => {
+const Messages = ({ data: { allUsers = [], ...options }}) => {
 	const authToken = localStorage.getItem('token'),	
 	 		users = [...allUsers],
 	 		params=options.variables.params;
@@ -24,8 +25,6 @@ const Messages = ({ data: { allUsers = [], ...options } }) => {
 		  	<Link to={`/messages/${user.id}`}>{user.username}</Link>
 		  </li>
 		);
-
-	console.log("authToken",authToken);
 
 	return (	    	
 	    	<div className="container-fluid">
@@ -49,11 +48,7 @@ const Messages = ({ data: { allUsers = [], ...options } }) => {
 	    				<div className="align-self-start mr-2">+</div>
 	    				<div className="media-body">Invite People</div>	    				
 	    			</div>
-	    			{authToken?(
-						<div className="media">	    				
-	    					<div className="media-body">LOG OUT</div>	    				
-	    				</div>
-	    				):(<div></div>)}
+	    			<Logout />
 	    		</div>
 	    		<div className="main-container">
 	    			<UserInfo receiverUserId={receiverId} />
