@@ -6,13 +6,23 @@ const MessageBox = ({ data: { getUser = {} }, receiverUserId }) => {
 	const authToken = localStorage.getItem('token'),
 	userInfo = {...getUser};
 
-	console.log("authToken",authToken);
+	//console.log("authToken",authToken);
 	console.log("receiverUserId",receiverUserId);
+
+
+	const _messageSend = (e) => {	
+	 let selector=	e.target;
+
+		if(e.key === 'Enter'){
+			let messageText=selector.textContent;
+    		console.log("messageText", messageText);  		
+  		}
+	};
 
 	return (	    	
     		<div className="row chat-container">
 				<div className="clearfix col-md-12">
-					<div className="chat-box-container" contentEditable="true"></div>
+					<div className="chat-box-container" contentEditable="true" onKeyPress={_messageSend}></div>
 				</div>
 			</div>   	
 	    );

@@ -1,9 +1,7 @@
 import React from 'react';
 
-const Logout = ({}) => {
+const Logout = () => {
 	const authToken = localStorage.getItem('token');
-
-	console.log("authToken-qqqq",authToken);
 
 	const _logOut = () => {
 		localStorage.removeItem('token');

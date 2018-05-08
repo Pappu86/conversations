@@ -6,12 +6,17 @@ export default `
     receiverId:Int!
   }
 
-type Query {
+  type Query {
     directMessages:[DirectMessages!]!
   }
 
+  type DirectMessageResponce {
+    ok: Boolean!
+    errors: [Error!]
+  }
+
   type Mutation {
-    createMessage(receiverId:Int!, text:String!):Boolean!
+    createMessage(receiverId:Int!, text:String!):DirectMessageResponce!
   }
 
 `;
